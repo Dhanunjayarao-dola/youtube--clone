@@ -1,19 +1,35 @@
-.recommended{
-    flex-basis: 30%;
+.video-container {
+    display: flex; /* Ensures the video and recommended section are side by side */
+    align-items: flex-start; /* Aligns the content properly */
+    gap: 15px; /* Adds space between the video and recommended section */
 }
-.side-video-list{
+
+.video-content {
+    flex: 2; /* Makes the video take more space */
+}
+
+.recommended {
+    flex: 1; /* Allows it to take remaining space */
+    max-width: 30%; /* Limits width so it doesn't shrink too much */
+}
+
+.side-video-list {
     display: flex;
-    justify-content: space-between;
+    align-items: center; /* Ensures image and text are aligned properly */
+    gap: 10px;
     margin-bottom: 8px;
 }
-.side-video-list img{
-    flex-basis: 49%;
-    width: 50%;
+
+.side-video-list img {
+    width: 50%; /* Makes sure thumbnails aren't too big */
+    flex-shrink: 0;
 }
-.vid-info{
-    flex-basis: 49%;
+
+.vid-info {
+    flex: 1; /* Allows text to take up remaining space */
 }
-.vid-info h4{
+
+.vid-info h4 {
     font-size: 13px;
     margin-bottom: 5px;
 }
