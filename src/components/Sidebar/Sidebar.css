@@ -51,7 +51,6 @@
 
 .small-sidebar {
     width: 5%;
-    transition: width 0.3s ease-in-out;
 }
 
 .small-sidebar p {
@@ -64,5 +63,10 @@
 
 .small-sidebar hr {
     width: 50%;
-    margin-bottom: 10px; /* Reduced space */
+    margin-bottom: 25px; 
+}
+
+.side-link.active img {
+    padding-bottom: 2px;
+    border-bottom: 3px solid red;
 }

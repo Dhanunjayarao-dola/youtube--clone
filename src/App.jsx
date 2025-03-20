@@ -1,17 +1,24 @@
 import React, { useState } from 'react';
-import Navbar from './components/Navbar/Navbar';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';  // Import useLocation
+import Navbar from './components/Navbar/Navbar';  
+import Sidebar from './components/Sidebar/Sidebar';  
 import Home from './page/video/Home/Home';
 import Video from './page/video/Video';
+import Recommended from './components/Recommended/Recommended';
 
 const App = () => {
-  const [sidebar, setsidebar] = useState(true); 
+  const [sidebar, setSidebar] = useState(true);  
+  const location = useLocation(); 
+  const hideSidebar = location.pathname.includes('/video/');
 
   return (
     <div className="app-container">
-      <Navbar setsidebar={setsidebar} sidebar={sidebar} />
-      <div className={`sidebar ${sidebar ? '' : 'small-sidebar'}`}> 
-      </div>
+      <Navbar setSidebar={setSidebar} sidebar={sidebar} /> 
+      
+      
+      {!hideSidebar && <Sidebar sidebar={sidebar} />} 
+      
+
       <Routes>
         <Route path='/' element={<Home sidebar={sidebar} />} />
         <Route path='/youtube--clone' element={<Home sidebar={sidebar} />} /> 

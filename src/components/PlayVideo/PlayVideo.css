@@ -5,15 +5,14 @@
     border-radius: 8px;
 }
 
-/* Ensure video plays properly */
-.play-video video {
+
+.play-video iframe{
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 6px;
-    display: block;
+    height: 37vw; 
+
 }
 
-/* Video Title */
+
 .play-video h3 {
     margin-top: 12px;
     font-weight: 600;
